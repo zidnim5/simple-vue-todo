@@ -8,9 +8,12 @@
   <div class="todo-list-box">
     <p class="todo-list-title">List Todo :</p>
     <div class="todo-list-job" v-for="(todoList, index) in todoLists" :key="todoList.id">
-
-      <hr>
-      {{todoList.title}}
+      <div>
+        {{todoList.title}}
+      </div>
+      <div @click="removeTodo(index)" class="todo-remove">
+        &times;
+      </div>
     </div>
   </div>
 </template>
@@ -47,6 +50,10 @@ export default {
         title: this.newTodo,
         completed: false,
       });
+    },
+
+    removeTodo(idx) {
+      this.todoLists.splice(idx, 1);
     }
   }
 }
@@ -79,6 +86,16 @@ export default {
 }
 .todo-list-job {
   margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+.todo-remove {
+  &:hover {
+    color: rgb(240, 68, 0);
+    cursor: pointer;
+  }
 }
 h3 {
   margin: 40px 0 0;
