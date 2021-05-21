@@ -37,9 +37,4 @@ jobs:
 
       - name: Create CodeDeploy Deployment
         id: deploy
-        run: |
-          aws deploy create-deployment \
-            --application-name teledoctor \
-            --deployment-group-name PreDeployment \
-            --deployment-config-name CodeDeployDefault.OneAtATime \
-            --github-location repository=${{ github.repository }},commitId=${{ github.sha }}
+        run: aws deploy create-deployment --application-name teledoctor --deployment-group-name PreDeployment --deployment-config-name CodeDeployDefault.OneAtATime --github-location repository=${{ github.repository }},commitId=${{ github.sha }}
