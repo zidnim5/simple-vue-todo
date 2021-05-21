@@ -41,6 +41,6 @@ jobs:
           # Assuming the Deployment Group is already setup
           aws deploy create-deployment \
             --application-name teledoctor \
-            --deployment-group-name teledoctor-deployment-group \
+            --deployment-group-name PreDeployment \
             --deployment-config-name CodeDeployDefault.OneAtATime \
             --github-location repository=${{ github.repository }},commitId=${{ github.sha }}
