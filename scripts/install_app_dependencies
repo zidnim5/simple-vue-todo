@@ -1,0 +1,6 @@
+#!/bin/bash
+cd C:/
+cd xampp
+cd htdocs
+cd simple-vue-todo
+npm install
