@@ -30,7 +30,6 @@ export default {
   margin: 0 auto;
 }
 .logo { 
-  width: auto;
   height: 100px;
 }
 </style>
