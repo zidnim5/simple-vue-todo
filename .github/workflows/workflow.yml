@@ -4,7 +4,7 @@ on:
     branches: [ master ]
 jobs:
   continuous-integration:
-    runs-on: windows
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@master
 
@@ -24,7 +24,7 @@ jobs:
         run: npm run build
 
   continuous-deployment:
-    runs-on: windows
+    runs-on: windows-latest
     needs: [continuous-integration]
     if: github.ref == 'refs/heads/main'
     steps:
